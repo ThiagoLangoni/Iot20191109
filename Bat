@@ -1,0 +1,6 @@
+@echo off
+for /L %%i in (1,1,10000) do (
+  mosquitto_pub -h test.mosquitto.org -t led07 -m 1
+  timeout /t 5
+  mosquitto_pub -h test.mosquitto.org -t led07 -m 0
+)
